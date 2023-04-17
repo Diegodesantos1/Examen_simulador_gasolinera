@@ -64,3 +64,8 @@ class Gasolinera:
         time.sleep(1)
         print("El coche %d ha salido de la gasolinera" % coche.id)
 
+
+if __name__ == "__main__":
+    gasolinera = Gasolinera(1)
+    for i in range(50):
+        Coche(i, gasolinera)
