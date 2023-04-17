@@ -65,7 +65,7 @@ class Gasolinera:
         print("El coche %d ha salido de la gasolinera" % coche.id)
 
 
-if __name__ == "__main__":
+def iniciar():
     gasolinera = Gasolinera(1)
     for i in range(50):
         Coche(i, gasolinera)
