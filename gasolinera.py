@@ -23,8 +23,7 @@ class Coche(threading.Thread):
         self.gasolinera.pagar(self)
         self.gasolinera.salir(self)
         self.tiempo = time.time() - self.tiempo
-        print("El coche %d ha tardado %f segundos" % (self.id, self.tiempo))
-
+        print(f"El coche {self.id} ha tardado {self.tiempo} segundos en repostar")
 
 class Gasolinera:
     def __init__(self, surtidores):
@@ -39,7 +38,7 @@ class Gasolinera:
         self.coche = 0
 
     def llega(self, coche):
-        print("El coche %d ha llegado a la gasolinera" % coche.id)
+        print(f"El coche {coche.id} ha llegado a la gasolinera")
         time.sleep(random.randint(1, 15)/100.0)
 
     def ocupar_surtidor(self, coche):
@@ -50,10 +49,10 @@ class Gasolinera:
         time.sleep(random.randint(5, 10)/100.0)
         self.surtidores_libres += 1
         self.surtidores_ocupados -= 1
-        print("El coche %d ha terminado de repostar" % coche.id)
+        print(f"El coche {coche.id} ha terminado de repostar")
 
     def pagar(self, coche):
-        print("El coche %d se ha puesto en la cola de pago" % coche.id)
+        print(f"El coche {coche.id} se ha puesto en la cola de pago")
         self.cola_pago.append(coche)
         time.sleep(3)
         print("El coche %d ha terminado de pagar" % coche.id)
