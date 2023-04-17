@@ -67,6 +67,6 @@ def iniciar():
         Coche(i, gasolinera)
     tiempo_final = time.time()
     tiempo_ejecucion = tiempo_final - tiempo_inicial
-    time.sleep(25)
     tiempo_final = (tiempo_ejecucion*20000)
+    time.sleep(25)
     print(f"El tiempo que han tardado todos los coches en repostar ha sido de {tiempo_final} minutos")
