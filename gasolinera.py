@@ -2,6 +2,7 @@ import threading
 import time
 import random
 from introducir import solicitar_introducir_numero
+from colorama import Fore, Back, Style
 
 class Coche(threading.Thread):
     def __init__(self, id, gasolinera):
@@ -59,6 +60,7 @@ class Gasolinera:
 
 
 def iniciar():
+    print(Fore.GREEN + "Bienvenido al gestor de la gasolinera" + Style.RESET_ALL)
     numero_surtidores = solicitar_introducir_numero("Introduce el número de surtidores: ")
     numero_coches = solicitar_introducir_numero("Introduce el número de coches: ")
     gasolinera = Gasolinera(numero_surtidores)
