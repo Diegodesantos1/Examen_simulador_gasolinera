@@ -2,12 +2,15 @@
 
 En este [repositorio](https://github.com/Diegodesantos1/Examen_simulador_gasolinera) quedan resuelto examen.
 
+![image](https://user-images.githubusercontent.com/91721855/232550093-e66d758e-7127-4b9a-b552-be294263e332.png)
+
 El código empleado para resolverlo es el siguiente:
 ```python
 import threading
 import time
 import random
 from introducir import solicitar_introducir_numero
+from colorama import Fore, Back, Style
 
 class Coche(threading.Thread):
     def __init__(self, id, gasolinera):
@@ -65,6 +68,7 @@ class Gasolinera:
 
 
 def iniciar():
+    print(Fore.GREEN + "Bienvenido al gestor de la gasolinera" + Style.RESET_ALL)
     numero_surtidores = solicitar_introducir_numero("Introduce el número de surtidores: ")
     numero_coches = solicitar_introducir_numero("Introduce el número de coches: ")
     gasolinera = Gasolinera(numero_surtidores)
