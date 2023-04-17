@@ -7,7 +7,7 @@ El código empleado para resolverlo es el siguiente:
 import threading
 import time
 import random
-
+from introducir import solicitar_introducir_numero
 
 class Coche(threading.Thread):
     def __init__(self, id, gasolinera):
@@ -65,14 +65,16 @@ class Gasolinera:
 
 
 def iniciar():
-    gasolinera = Gasolinera(1)
+    numero_surtidores = solicitar_introducir_numero("Introduce el número de surtidores: ")
+    numero_coches = solicitar_introducir_numero("Introduce el número de coches: ")
+    gasolinera = Gasolinera(numero_surtidores)
     tiempo_inicial = time.time()
-    for i in range(50):
+    for i in range(numero_coches):
         Coche(i, gasolinera)
     tiempo_final = time.time()
     tiempo_ejecucion = tiempo_final - tiempo_inicial
-    time.sleep(30)
     tiempo_final = (tiempo_ejecucion*20000)
+    time.sleep(25)
     print(f"El tiempo que han tardado todos los coches en repostar ha sido de {tiempo_final} minutos")
 ```
 <h1 align = "center">UML</h1>
